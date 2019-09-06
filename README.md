@@ -13,7 +13,7 @@ The Github App API.
 
 `$ npm start`
     
-The server will run on `http://localhost:3000`.
+The server will run on `http://localhost:4000`.
 
 ## Test and Coverall
     

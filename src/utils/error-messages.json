@@ -1,9 +1,23 @@
 {
-  "DEFAULT": {
+  "ERROR:DEFAULT": {
     "status": 500,
     "body": {
       "code": 1,
-      "message": "Erro ao processar requisição"
+      "message": "Unexpected error"
+    }
+  },
+  "ERROR:FORBIDDEN": {
+    "status": 403,
+    "body": {
+      "code": 2,
+      "message": "API rate limit exceeded"
+    }
+  },
+  "ERROR:NOT_FOUND": {
+    "status": 404,
+    "body": {
+      "code": 3,
+      "message": "Not found"
     }
   }
 }

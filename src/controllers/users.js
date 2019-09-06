@@ -1,6 +1,5 @@
 import log4js from 'log4js'
-import axios from 'axios'
-import config from '../../configs'
+import request from '../utils/request'
 import parse from 'parse-link-header'
 import { get } from 'lodash'
 
@@ -14,9 +13,9 @@ const list = async (ctx) => {
         since
     } = ctx.request.query
 
-    const response = await axios({
+    const response = await request({
         method: 'GET',
-        url: `${config.github.host}/users?page=${page}&per_page=${per_page}&since=${since}`
+        url: `/users?page=${page}&per_page=${per_page}&since=${since}`
     })
 
     const {
@@ -32,14 +31,13 @@ const list = async (ctx) => {
 
 const show = async (ctx) => {
     log.info('Enter in show')
-
     const {
         username
     } = ctx.params
 
-    const response = await axios({
+    const response = await request({
         method: 'GET',
-        url: `${config.github.host}/users/${username}`
+        url: `/users/${username}`
     })
 
     ctx.body = response.data
@@ -52,9 +50,9 @@ const listRepos = async (ctx) => {
         username
     } = ctx.params
 
-    const response = await axios({
+    const response = await request({
         method: 'GET',
-        url: `${config.github.host}/users/${username}/repos`
+        url: `/users/${username}/repos`
     })
 
     ctx.body = response.data
