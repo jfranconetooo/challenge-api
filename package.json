@@ -33,8 +33,8 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "start": "nodemon index.js",
-    "start:prod": "cross-env NODE_ENV=prod babel-node index.js",
+    "start": "cross-env NODE_ENV=prod babel-node index.js",
+    "start:dev": "nodemon index.js",
     "test": "cross-env NODE_ENV=test mocha --colors --require @babel/register --require src/test/helpers \"src/test/*@(.spec.js)\" --timeout 20000 --exit",
     "coverall": "nyc npm test"
   },
