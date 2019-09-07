@@ -25,7 +25,7 @@ const list = async (ctx) => {
 
     ctx.body = {
         docs: response.data,
-        next: get(parsed, 'next.url', '')
+        next: get(parsed, 'next', '')
     }
 }
 
