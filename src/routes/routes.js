@@ -5,7 +5,7 @@ const {
 } = controllers
 
 export default (basePath = '/api', router) => {
-  router.get('/', ctx => ctx.body = 'Server is Running')
+  router.get('/', ctx => ctx.body = 'Server is Running!')
   /*
     Users routes
   */
